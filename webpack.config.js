@@ -5,8 +5,8 @@ module.exports = {
     mode: 'development',
     entry: './resource/js/app.js',
     output: { 
-        filename: 'app.js',
-        path: path.resolve(__dirname, 'public/js/'),
+        filename: 'js/app.js',
+        path: path.resolve(__dirname, 'public/'),
     },
     module: {
         rules: [
@@ -49,7 +49,11 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "style.css",
+            filename: "css/style.css",
         }),
     ],
+    // node_modules を監視（watch）対象から除外
+    watchOptions: {
+        ignored: /node_modules/  //正規表現で指定
+    },
 };
