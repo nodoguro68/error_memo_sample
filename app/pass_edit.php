@@ -25,7 +25,7 @@
     <main class="main">
         <div class="container">
 
-            <form action="" class="form">
+            <form method="post" action="" class="form">
                 <div class="form__header">
                     <h2 class="form_title">パスワード変更</h2>
                     <span class="err-msg--common"></span>
