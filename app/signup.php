@@ -51,7 +51,6 @@
                 </div>
                 <div class="form__footer">
                     <input type="submit" value="登録" class="btn btn--form">
-                    <a href="" class="form__link">パスワードを忘れた方はこちら</a>
                 </div>
             </form>
         </div>
