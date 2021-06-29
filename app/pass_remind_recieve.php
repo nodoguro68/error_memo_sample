@@ -24,7 +24,7 @@
     <main class="main">
         <div class="container">
 
-            <form action="" class="form">
+            <form method="post" action="" class="form">
                 <div class="form__header">
                     <p class="form_description">ご指定のメールアドレスにお送りした「パスワード再発行認証」メール内にある「認証キー」をご入力ください</p>
                     <span class="err-msg--common"></span>
