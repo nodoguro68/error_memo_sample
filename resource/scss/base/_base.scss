@@ -1,0 +1,20 @@
+html,body{
+    width: 100%;
+    font-size: $font-size_default;
+    color: $font-color_default;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.container{
+    width: $site-width;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+
+
