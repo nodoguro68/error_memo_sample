@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>ユーザー登録</title>
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header__inner">
@@ -25,8 +27,8 @@
 
             <form method="post" action="" class="form">
                 <div class="form__header">
-                    <h2 class="form_title">ユーザー登録</h2>
-                    <span class="err-msg--common"></span>
+                    <h2 class="form__title">ユーザー登録</h2>
+                    <!-- <span class="err-msg--common">エラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラー</span> -->
                 </div>
                 <div class="form__body">
                     <div class="form__item">
@@ -51,7 +53,9 @@
                     </div>
                 </div>
                 <div class="form__footer">
-                    <input type="submit" value="登録" class="btn btn--form">
+                    <div class="btn-container">
+                        <input type="submit" value="登録" class="btn btn--form">
+                    </div>
                 </div>
             </form>
         </div>
@@ -60,4 +64,5 @@
 
     <script src="../public/js/app.js"></script>
 </body>
+
 </html>

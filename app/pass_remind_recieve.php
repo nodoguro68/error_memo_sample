@@ -26,7 +26,7 @@
 
             <form method="post" action="" class="form">
                 <div class="form__header">
-                    <p class="form_description">ご指定のメールアドレスにお送りした「パスワード再発行認証」メール内にある「認証キー」をご入力ください</p>
+                    <p class="form__description">ご指定のメールアドレスにお送りした「パスワード再発行認証」メール内にある「認証キー」をご入力ください</p>
                     <span class="err-msg--common"></span>
                 </div>
                 <div class="form__body">
@@ -37,7 +37,9 @@
                     </div>
                 </div>
                 <div class="form__footer">
-                    <input type="submit" value="再発行" class="btn btn--form">
+                    <div class="btn-container">
+                        <input type="submit" value="再発行" class="btn btn--form">
+                    </div>
                 </div>
             </form>
 

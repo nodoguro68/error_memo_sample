@@ -28,7 +28,7 @@
             <section class="section">
                 <form method="post" action="" class="form">
                     <div class="form__header">
-                        <h2 class="form_title">退会</h2>
+                        <h2 class="form__title">退会</h2>
                         <p class="form__description">退会を完了するためにはパスワードを入力してください。</p>
                         <span class="err-msg--common"></span>
                     </div>
@@ -40,7 +40,9 @@
                         </div>
                     </div>
                     <div class="form__footer">
-                        <input type="submit" value="退会する" class="btn btn--form">
+                        <div class="btn-container">
+                            <input type="submit" value="退会する" class="btn btn--form">
+                        </div>
                     </div>
                 </form>
 

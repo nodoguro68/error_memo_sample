@@ -28,7 +28,7 @@
             <section class="profile">
                 <form method="post" action="" class="form--profile">
                     <div class="form__header">
-                        <h2 class="form_title">プロフィール編集</h2>
+                        <h2 class="form__title">プロフィール編集</h2>
                         <span class="err-msg--common"></span>
                     </div>
                     <div class="form__body">
@@ -69,7 +69,9 @@
                         </div>
                     </div>
                     <div class="form__footer">
-                        <input type="submit" value="変更" class="btn btn--form">
+                        <div class="btn-container">
+                            <input type="submit" value="変更" class="btn btn--form">
+                        </div>
                     </div>
                 </form>
 

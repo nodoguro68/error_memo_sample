@@ -26,7 +26,7 @@
 
             <form method="post" action="" class="form">
                 <div class="form__header">
-                    <h2 class="form_title">ログイン</h2>
+                    <h2 class="form__title">ログイン</h2>
                     <span class="err-msg--common"></span>
                 </div>
                 <div class="form__body">
@@ -46,7 +46,9 @@
                     <label>
                         <input type="checkbox" name="" id="">自動でログイン
                     </label>
-                    <input type="submit" value="ログイン" class="btn btn--form">
+                    <div class="btn-container">
+                        <input type="submit" value="ログイン" class="btn btn--form">
+                    </div>
                 </div>
             </form>
         </div>

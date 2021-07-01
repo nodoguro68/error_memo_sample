@@ -26,7 +26,7 @@
 
             <form method="post" action="" class="form">
                 <div class="form__header">
-                    <p class="form_description">ご指定のメールアドレス宛にパスワード再発行用のURLと認証キーをお送り致します。</p>
+                    <p class="form__description">ご指定のメールアドレス宛にパスワード再発行用のURLと認証キーをお送り致します。</p>
                     <span class="err-msg--common"></span>
                 </div>
                 <div class="form__body">
@@ -37,7 +37,9 @@
                     </div>
                 </div>
                 <div class="form__footer">
-                    <input type="submit" value="送信" class="btn btn--form">
+                    <div class="btn-container">
+                        <input type="submit" value="送信" class="btn btn--form">
+                    </div>
                 </div>
             </form>
         </div>
