@@ -28,7 +28,7 @@
             <form method="post" action="" class="form">
                 <div class="form__header">
                     <h2 class="form__title">ユーザー登録</h2>
-                    <!-- <span class="err-msg--common">エラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラーエラー</span> -->
+                    <div class="err-msg__area">エラー</div>
                 </div>
                 <div class="form__body">
                     <div class="form__item">

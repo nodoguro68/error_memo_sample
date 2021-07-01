@@ -30,7 +30,7 @@
                     <div class="form__header">
                         <h2 class="form__title">退会</h2>
                         <p class="form__description">退会を完了するためにはパスワードを入力してください。</p>
-                        <span class="err-msg--common"></span>
+                        <div class="err-msg__area"></div>
                     </div>
                     <div class="form__body">
                         <div class="form__item">

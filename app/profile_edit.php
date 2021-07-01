@@ -29,7 +29,7 @@
                 <form method="post" action="" class="form--profile">
                     <div class="form__header">
                         <h2 class="form__title">プロフィール編集</h2>
-                        <span class="err-msg--common"></span>
+                        <div class="err-msg__area"></div>
                     </div>
                     <div class="form__body">
                         <div class="form__item-img">
@@ -78,7 +78,7 @@
                 <div class="link-container">
                     <a href="" class="">＜マイページへ戻る</a>
                 </div>
-            
+
             </section>
         </div>
 
