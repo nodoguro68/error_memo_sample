@@ -1,0 +1,17 @@
+.nav {
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        display: block;
+        margin-right: $space_xl;
+        padding: 15px;
+        transition: .3s;
+
+        &:hover{
+            color: rgb(235, 69, 105);
+        }
+    }
+}
