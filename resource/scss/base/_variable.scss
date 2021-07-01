@@ -4,16 +4,21 @@ $accent-color: rgb(230,000,018);
 
 // 背景色
 $bg-color_base: $base-color;
-$bg-color_btn-submit: $accent-color;
+$bg-color_btn-submit: #555;
 $bg-color_btn-add: $base-color;
 $bg-color_header: $main-color;
 $bg-color_success-msg: rgb(80, 204, 146);
+
+// ボーダー
+$border-color_input: #555;
 
 // 文字色
 $font-color_default: #333;
 $font-color_header: #fff;
 $font-color_note: rgb(230,000,018);
 $font-color_error-msg: rgb(230,000,018);
+$font-color_btn: #fff;
+
 
 // フォントサイズ
 $font-size_s: 12px;
@@ -34,5 +39,5 @@ $space_3l: 40px;
 
 // 幅
 $site-width: 980px;
-$form-width: 500px;
+$form-width: 400px;
 $sidebar-width: 300px;
