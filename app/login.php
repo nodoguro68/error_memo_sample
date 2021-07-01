@@ -36,10 +36,9 @@
                         <span class="err-msg"></span>
                     </div>
                     <div class="form__item">
-                        <label for="password" class="form__label">パスワード<span class="form__note">8文字以上の英数字</span></label>
+                        <label for="password" class="form__label">パスワード</label>
                         <input type="password" name="password" class="form__input" id="password">
                         <span class="err-msg"></span>
-                        <a href="" class="form__link">パスワードを忘れた場合</a>
                     </div>
                 </div>
                 <div class="form__footer">
@@ -48,6 +47,10 @@
                     </label>
                     <div class="btn-container">
                         <input type="submit" value="ログイン" class="btn btn--form">
+                    </div>
+                    <div class="link-container">
+                        <a href="pass_remind_send.php" class="form__link">パスワードを忘れた場合はこちら</a>
+                        <a href="signup.php" class="form__link">新規登録はこちら</a>
                     </div>
                 </div>
             </form>
