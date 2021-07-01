@@ -1,0 +1,37 @@
+$base-color: #fff;
+$main-color: rgb(024,127,196);
+$accent-color: rgb(230,000,018);
+
+// 背景色
+$bg-color_base: $base-color;
+$bg-color_btn-submit: $accent-color;
+$bg-color_btn-add: $base-color;
+$bg-color_header: $main-color;
+$bg-color_success-msg: rgb(80, 204, 146);
+
+// 文字色
+$font-color_base: #333;
+$font-color_note: rgb(230,000,018);
+$font-color_error-msg: rgb(230,000,018);
+
+// フォントサイズ
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_default: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_3l: 38px;
+
+// 余白
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+// 幅
+$site-width: 980px;
+$form-width: 500px;
+$sidebar-width: 300px;
