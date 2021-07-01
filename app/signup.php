@@ -28,7 +28,7 @@
             <form method="post" action="" class="form">
                 <div class="form__header">
                     <h2 class="form__title">ユーザー登録</h2>
-                    <div class="err-msg__area">エラー</div>
+                    <!-- <div class="err-msg__area">エラー</div> -->
                 </div>
                 <div class="form__body">
                     <div class="form__item">
@@ -42,7 +42,7 @@
                         <span class="err-msg"></span>
                     </div>
                     <div class="form__item">
-                        <label for="password" class="form__label">パスワード</label>
+                        <label for="password" class="form__label">パスワード<span class="form__note">半角英数字8文字以上</span></label>
                         <input type="password" name="password" class="form__input" id="password">
                         <span class="err-msg"></span>
                     </div>

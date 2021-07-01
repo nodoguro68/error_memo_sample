@@ -37,7 +37,7 @@
                         <span class="err-msg"></span>
                     </div>
                     <div class="form__item">
-                        <label for="password" class="form__label">新しいパスワード</label>
+                        <label for="password" class="form__label">新しいパスワード<span class="form__note">半角英数字8文字以上</span></label>
                         <input type="password" name="password_new" class="form__input" id="password">
                         <span class="err-msg"></span>
                     </div>
