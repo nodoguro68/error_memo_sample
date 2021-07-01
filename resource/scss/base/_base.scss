@@ -11,10 +11,9 @@ img {
 }
 
 .container{
-    width: $site-width;
+    max-width: $site-width;
     margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 120px;
+    padding: 80px $space_l 120px;
 }
 
 
