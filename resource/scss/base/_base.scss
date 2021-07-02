@@ -16,4 +16,15 @@ img {
     padding: 80px $space_l 120px;
 }
 
+.contents {
+    display: flex;
+}
+.sidebar__area {
+    width: 25%;
+}
+
+.main__area {
+    width: 70%;
+    margin-left: $space_3l;
+}
 
