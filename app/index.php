@@ -26,7 +26,7 @@
     <main class="main">
         <div class="container">
 
-            <div class="contents">
+            <div class="contents-2column">
                 <aside class="sidebar__area">
 
                     <ul class="category-list">
@@ -48,9 +48,9 @@
 
                 <div class="main__area">
 
-                    <form method="post" action="" class="form--search">
+                    <form method="post" action="" class="form-search">
                         <input type="text" name="search" class="form__input">
-                        <input type="submit" value="検索">
+                        <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
                     </form>
 
                     <ul class="list">
