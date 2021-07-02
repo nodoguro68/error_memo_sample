@@ -10,16 +10,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__inner">
-            <nav class="nav">
-                <ul class="nav__menu">
-                    <li class="nav__item"><a href="index.php" class="nav__link">トップページ</a></li>
-                    <li class="nav__item"><a href="login.php" class="nav__link">ユーザー登録</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php require_once 'template/header.php'; ?>
 
     <main class="main">
         <div class="container">
