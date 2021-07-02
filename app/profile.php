@@ -15,38 +15,43 @@
     <main class="main">
         <div class="container">
 
-            <section class="profile">
-                <h2 class="title">プロフィール</h2>
-                <ul class="profile-list">
-                    <li class="profile-list__item--img">
-                        <img src="" alt="">
-                    </li>
-                    <li class="profile-list__item">
-                        ユーザーネーム
-                    </li>
-                    <li class="profile-list__item">
-                        メールアドレス
-                    </li>
-                    <li class="profile-list__item">
-                        github
-                        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-                    </li>
-                    <li class="profile-list__item">
-                        twitter
-                        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-                    </li>
-                    <li class="profile-list__item">
-                        qiita
-                        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-                    </li>
-                    <li class="profile-list__item">
-                        blog
-                        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-                    </li>
-                </ul>
-
-                <div class="link-container">
-                    <a href="profile_edit.php">編集する</a>
+            <section class="profile-list">
+                <div class="profile-list__header">
+                    <h2 class="title">プロフィール</h2>
+                </div>
+                <div class="profile-list__body">
+                    <ul class="profile-list__menu">
+                        <li class="profile-list__item">
+                            <img src="" alt="プロフィール画像" class="profile-list__img">
+                        </li>
+                        <li class="profile-list__item">
+                            <span>ユーザーネーム</span>
+                        </li>
+                        <li class="profile-list__item">
+                            <span>メールアドレス</span>
+                        </li>
+                        <li class="profile-list__item">
+                            <span>githubアカウント</span>
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="profile-list__link">aaaaaaaaaaaa</a>
+                        </li>
+                        <li class="profile-list__item">
+                            <span>twitterアカウント</span>
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="profile-list__link">aaaaaaaaaaaa</a>
+                        </li>
+                        <li class="profile-list__item">
+                            <span>qiitaアカウント</span>
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="profile-list__link">aaaaaaaaaaaa</a>
+                        </li>
+                        <li class="profile-list__item">
+                            <span>ブログURL</span>
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="profile-list__link">aaaaaaaaaaaa</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile-list__footer">
+                    <div class="link-container">
+                        <a href="profile_edit.php" class="btn btn-edit">編集する</a>
+                    </div>
                 </div>
 
             </section>

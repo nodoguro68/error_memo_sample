@@ -2,6 +2,7 @@
 @import 'base/variable';
 @import 'base/mixin';
 @import 'base/base';
+@import 'modules/message';
 @import 'modules/nav';
 @import 'modules/logo';
 @import 'modules/header';
@@ -11,6 +12,7 @@
 @import 'modules/error-list';
 @import 'modules/error-form';
 @import 'modules/profile';
+@import 'modules/profile-form';
 
 
 @media (min-width: 480px) {
