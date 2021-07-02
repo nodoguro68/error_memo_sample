@@ -1,25 +1,21 @@
 .form {
     max-width: $form-width;
-    margin: $space_3l auto 0;
+    margin: $space_xl auto 0;
 
     &__header {
         text-align: center;
         .form__title {
             font-size: $font-size_xl;
+            font-weight: bold;
         }
         .form__description {
             margin-top: $space_m;
             text-align: left;
         }
-        .err-msg__area {
-            background: rgb(240, 162, 210);
-            color: rgb(158, 14, 14);
-            text-align: left;
-        }
     }
     &__body {
         .form__item {
-            margin-top: $space_3l;
+            margin-top: $space_xxl;
 
             .form__label {
                 display: block;
@@ -44,6 +40,10 @@
                     border-radius: 50%;
                     opacity: 0;
                 }
+                &-err {
+                    border: 3px solid rgb(255, 77, 77);
+                    background: rgb(255, 204, 204);
+                }
             }
             .form__preview {
                 display: block;
@@ -52,6 +52,11 @@
                 margin: 0 auto;
                 background: #999;
                 border-radius: 50%;
+
+                &-err {
+                    background: rgb(255, 204, 204);
+                    border: 3px solid rgb(255, 77, 77);
+                }
             }
             
             &-img {
