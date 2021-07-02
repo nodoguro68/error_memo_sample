@@ -2,7 +2,7 @@
 
     &__item {
         position: relative;
-        border-bottom: 1px solid $border-color_input;
+        border-bottom: 1px solid $border-color_base;
     }
     &__link {
         display: block;
@@ -22,7 +22,7 @@
     .form__input {
         width: 80%;
         padding: 5px;
-        border: 1px solid $border-color_input;
+        border: 1px solid $border-color_base;
         border-radius: 3px;
     }
 
@@ -30,7 +30,7 @@
         display: inline-block;
         width: 39px;
         height: 39px;
-        border: 1px solid $border-color_input;
+        border: 1px solid $border-color_base;
         border-radius: 3px;
         text-align: center;
     }
