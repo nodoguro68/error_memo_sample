@@ -39,8 +39,9 @@
 
                 <form method="post" action="" class="form-container">
 
-                    <div class="form--search">
+                    <div class="form-search">
                         <input type="text" name="search" class="form__input">
+                        <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
                     </div>
 
                     <select name="select" id="" class="selectbox">
@@ -48,7 +49,6 @@
                         <option value="" class="">古い順</option>
                     </select>
 
-                    <input type="submit" value="検索" class="btn btn--search">
                 </form>
 
                 <ul class="list">
