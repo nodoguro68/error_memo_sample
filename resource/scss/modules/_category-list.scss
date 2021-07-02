@@ -20,17 +20,17 @@
     margin-top: $space_3l;
 
     .form__input {
-        width: 80%;
+        width: 75%;
         padding: 5px;
-        border: 1px solid $border-color_base;
+        border: 3px solid $border-color_input;
         border-radius: 3px;
     }
 
     .btn-add {
         display: inline-block;
-        width: 39px;
-        height: 39px;
-        border: 1px solid $border-color_base;
+        width: 43px;
+        height: 43px;
+        border: 3px solid $border-color_input;
         border-radius: 3px;
         text-align: center;
     }
