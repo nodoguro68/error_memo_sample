@@ -1,0 +1,16 @@
+.form--profile {
+    max-width: 500px;
+
+    .form__item {
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .form__input {
+            width: 50%;
+            margin: 0;
+        }
+    }
+}
