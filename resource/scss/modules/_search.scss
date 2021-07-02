@@ -1,0 +1,21 @@
+.form-search {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+
+    .form__input {
+        width: 100%;
+        padding: 5px 10px;
+        border: 3px solid $border-color_input;
+        border-radius: 20px;
+    }
+
+    .btn-search {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        color: $font-color_btn-search;
+    }
+}
