@@ -26,16 +26,16 @@
         <div class="container">
 
             <section class="profile">
-                <form method="post" action="" class="form--profile">
+                <form method="post" action="" class="form form--profile">
                     <div class="form__header">
                         <h2 class="form__title">プロフィール編集</h2>
                         <div class="err-msg__area"></div>
                     </div>
                     <div class="form__body">
-                        <div class="form__item-img">
-                            <input type="file" name="" id="">
-                            <img src="" alt="">
-                            <input type="hidden" name="">
+                        <div class="form__item form__item-img">
+                            <input type="file" name="profile_img" class="form__input-file">
+                            <img src="" alt="プロフィール画像" class="form__preview">
+                            <input type="hidden" name="MAX_FILE_SIZE">
                         </div>
                         <div class="form__item">
                             <label for="username" class="form__label">ユーザーネーム</label>
@@ -48,22 +48,22 @@
                             <span class="err-msg"></span>
                         </div>
                         <div class="form__item">
-                            <label for="github" class="form__label">github</label>
+                            <label for="github" class="form__label">githubアカウント</label>
                             <input type="text" name="github" class="form__input" id="github">
                             <span class="err-msg"></span>
                         </div>
                         <div class="form__item">
-                            <label for="twitter" class="form__label">twitter</label>
+                            <label for="twitter" class="form__label">twitterアカウント</label>
                             <input type="text" name="twitter" class="form__input" id="twitter">
                             <span class="err-msg"></span>
                         </div>
                         <div class="form__item">
-                            <label for="qiita" class="form__label">qiita</label>
+                            <label for="qiita" class="form__label">qiitaアカウント</label>
                             <input type="text" name="qiita" class="form__input" id="qiita">
                             <span class="err-msg"></span>
                         </div>
                         <div class="form__item">
-                            <label for="blog" class="form__label">ブログ</label>
+                            <label for="blog" class="form__label">ブログURL</label>
                             <input type="text" name="blog" class="form__input" id="blog">
                             <span class="err-msg"></span>
                         </div>

@@ -34,6 +34,29 @@
                 padding: 5px 10px;
                 border: 1px solid $border-color_input;
                 border-radius: 5px;
+
+                &-file {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    opacity: 0;
+                }
+            }
+            .form__preview {
+                display: block;
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+                background: #999;
+                border-radius: 50%;
+            }
+            
+            &-img {
+                position: relative;
+                text-align: center;
             }
         }
     }
