@@ -1,0 +1,37 @@
+.category-list {
+
+    &__item {
+        position: relative;
+        border-bottom: 1px solid $border-color_input;
+    }
+    &__link {
+        display: block;
+        padding: 10px 30px 10px 5px;
+    }
+    .btn-delete {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+}
+
+.form-category {
+    margin-top: $space_3l;
+
+    .form__input {
+        width: 80%;
+        padding: 5px;
+        border: 1px solid $border-color_input;
+        border-radius: 3px;
+    }
+
+    .btn-add {
+        display: inline-block;
+        width: 39px;
+        height: 39px;
+        border: 1px solid $border-color_input;
+        border-radius: 3px;
+        text-align: center;
+    }
+}
