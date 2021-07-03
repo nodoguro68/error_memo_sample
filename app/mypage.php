@@ -52,8 +52,8 @@ require_once 'template/header.php';
                 <li class="pagenation-list__item"><a href="" class="pagenation-list__link">&gt;&gt;</a></li>
             </ul>
 
-            <div class="btn__link">
-                <a href="register_error-memo.php" class="link">＋</a>
+            <div class="link__container">
+                <a href="register_error-memo.php" class="link-register">＋</a>
             </div>
 
         </div>
