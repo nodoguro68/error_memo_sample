@@ -43,8 +43,13 @@ require_once 'template/header.php';
                 </ul>
 
                 <ul class="pagenation-list">
-                    <li class="pagenation-list__item"><a href="">&lt;</a></li>
-                    <li class="pagenation-list__item"><a href="">&gt;</a></li>
+                    <li class="pagenation-list__item"><a href="" class="pagenation-list__link">&lt;&lt;</a></li>
+                    <li class="pagenation-list__item"><a href="" class="pagenation-list__link">&lt;</a></li>
+                    <li class="pagenation-list__item pagenation-list__item-active"><a href="" class="pagenation-list__link">1</a></li>
+                    <li class="pagenation-list__item"><a href="" class="pagenation-list__link">2</a></li>
+                    <li class="pagenation-list__item"><a href="" class="pagenation-list__link">3</a></li>
+                    <li class="pagenation-list__item"><a href="" class="pagenation-list__link">&gt;</a></li>
+                    <li class="pagenation-list__item"><a href="" class="pagenation-list__link">&gt;&gt;</a></li>
                 </ul>
 
                 <div class="btn__link">
