@@ -10,8 +10,8 @@ $bg-color_header: $main-color;
 $bg-color_success-msg: rgb(80, 204, 146);
 
 // ボーダー
-$border-color_base: #555;
-$border-color_input: rgb(211, 211, 211);
+// $border-color_base: #555;
+$border-color_base: rgb(211, 211, 211);
 
 // 文字色
 $font-color_default: #333;
@@ -39,6 +39,7 @@ $space_l: 15px;
 $space_xl: 20px;
 $space_xxl: 30px;
 $space_3l: 40px;
+$space_4l: 50px;
 
 // 幅
 $site-width: 980px;
