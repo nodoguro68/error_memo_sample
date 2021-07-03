@@ -33,13 +33,13 @@ require_once 'template/header.php';
                     <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
                 </form>
 
-                <ul class="list">
-                    <li class="list__item"><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                    <li class="list__item"><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                    <li class="list__item"><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                    <li class="list__item"><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                    <li class="list__item"><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                    <li class="list__item"><a href="" class="list__link">エラー<span class="date"></span></a></li>
+                <ul class="error-list">
+                    <li class="error-list__item"><a href="" class="error-list__link">エラー<span class="error-list__date">2020/02/15</span></a></li>
+                    <li class="error-list__item"><a href="" class="error-list__link">エラー<span class="error-list__date"></span></a></li>
+                    <li class="error-list__item"><a href="" class="error-list__link">エラー<span class="error-list__date"></span></a></li>
+                    <li class="error-list__item"><a href="" class="error-list__link">エラー<span class="error-list__date"></span></a></li>
+                    <li class="error-list__item"><a href="" class="error-list__link">エラー<span class="error-list__date"></span></a></li>
+                    <li class="error-list__item"><a href="" class="error-list__link">エラー<span class="error-list__date"></span></a></li>
                 </ul>
 
                 <ul class="pagenation-list">

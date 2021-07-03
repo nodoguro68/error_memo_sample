@@ -32,12 +32,14 @@ require_once 'template/header.php';
 
             </form>
 
-            <ul class="list">
-                <li class="list__item"><span class="category">カテゴリー</span><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                <li class="list__item"><span class="category">カテゴリー</span><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                <li class="list__item"><span class="category">カテゴリー</span><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                <li class="list__item"><span class="category">カテゴリー</span><a href="" class="list__link">エラー<span class="date"></span></a></li>
-                <li class="list__item"><span class="category">カテゴリー</span><a href="" class="list__link">エラー<span class="date"></span></a></li>
+            <ul class="error-list error-list-mypage">
+                <li class="error-list__item">
+                    <a href="" class="error-list__link">
+                        <span class="error-list__category">カテゴリー</span>
+                        エラー
+                        <span class="error-list__date">2020/12/11</span>
+                    </a>
+                </li>
             </ul>
 
             <ul class="pagenation-list">
