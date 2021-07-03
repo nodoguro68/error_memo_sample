@@ -1,0 +1,26 @@
+.pagenation-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+    &__item {
+        display: inline-block;
+        margin-left: $space_m;
+        border: 1px solid #000;
+        border-radius: 3px;
+
+        &-active {
+            background: #000;
+            color: #fff;
+        }
+
+    }
+
+    &__link {
+        display: block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+}
