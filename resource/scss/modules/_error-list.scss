@@ -1,0 +1,37 @@
+.error-list {
+    margin-top: $space_4l;
+    border: 2px solid $border-color_base;
+    border-radius: 3px;
+
+
+    &__item {
+        position: relative;
+        border-bottom: 2px solid $border-color_base;
+        
+        &:last-of-type {
+            border: none;
+        }
+    }
+    
+    &__link {
+        display: block;
+        padding: 10px 20px;
+
+        &:hover {
+            background: $border-color_base;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: $font-size_s;
+    }
+}
+
+.error-list-mypage {
+    max-width: 700px;
+    margin: $space_4l auto 0;
+}
