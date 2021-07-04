@@ -19,6 +19,20 @@ img {
 .contents-2column {
     display: flex;
 }
+.contents-2column-reverse {
+    flex-direction: row-reverse;
+
+    .sidebar__area {
+        margin-left: $space_3l;
+        padding: $space_4l $space_m;
+        border: 2px solid $border-color_base;
+        border-radius: 3px;
+    }
+
+    .main__area {
+        margin: 0;
+    }
+}
 .sidebar__area {
     width: 25%;
 }
