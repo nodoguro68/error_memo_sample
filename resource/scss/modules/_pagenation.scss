@@ -6,11 +6,13 @@
     &__item {
         display: inline-block;
         margin-left: $space_m;
-        border: 1px solid #000;
+        border: 2px solid $border-color_base;
         border-radius: 3px;
+        color: $border-color_base;
 
         &-active {
-            background: #000;
+            border: 2px solid $main-color2;
+            background: $main-color2;
             color: #fff;
         }
 
