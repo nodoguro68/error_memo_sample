@@ -1,0 +1,38 @@
+.sidebar__header {
+    .img-container {
+
+        .profile__img {
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            background: #999;
+            border-radius: 50%;
+        }
+    }
+
+    .user-info-container {
+        margin-top: $space_m;
+        text-align: center;
+        .username {
+            font-size: $font-size_l;
+            font-weight: bold;
+        }
+    }
+}
+
+.sidebar__body {
+    margin-top: $space_3l;
+
+    .sidebar-list {
+        
+        &__item {
+            border-bottom: 2px solid $border-color_base;
+            
+        }
+        &__link {
+            display: block;
+            padding: 10px 20px;
+        }
+    }
+}
