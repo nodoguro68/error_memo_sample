@@ -21,7 +21,7 @@ require_once 'template/header.php';
 
                 <form method="post" action="" class="form-category">
                     <input type="text" name="category" class="form__input" placeholder="カテゴリーを追加">
-                    <input type="submit" value="＋" class="btn-add">
+                    <input type="submit" value="＋" class="btn-add-category">
                 </form>
 
             </aside>
