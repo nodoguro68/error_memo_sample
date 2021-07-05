@@ -39,3 +39,6 @@ function fetchAll($sql, $params = array()) {
     return execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// エラーログ
+ini_set('log_errors', 'on');
+ini_set('error_log', '../php.log');
