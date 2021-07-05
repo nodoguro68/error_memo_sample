@@ -42,3 +42,12 @@ function fetchAll($sql, $params = array()) {
 // エラーログ
 ini_set('log_errors', 'on');
 ini_set('error_log', '../php.log');
+
+/**
+ * エスケープ処理
+ * @param string $str
+ * @return str
+ */
+function escape($str) {
+    return htmlspecialchars($str,ENT_QUOTES);
+}
