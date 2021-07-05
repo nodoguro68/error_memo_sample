@@ -4,3 +4,4 @@ public/js
 /node_modules
 /vendor
 .env
+app/php.log
