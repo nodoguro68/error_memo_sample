@@ -43,6 +43,10 @@ function fetchAll($sql, $params = array()) {
 ini_set('log_errors', 'on');
 ini_set('error_log', '../php.log');
 
+// セッション
+session_start();
+session_regenerate_id();
+
 /**
  * エスケープ処理
  * @param string $str
