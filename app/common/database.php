@@ -1,5 +1,9 @@
 <?php 
 
+/**
+ * PDOを使ってDBに接続
+ * @return PDO
+ */
 function dbConnect()
 {
     $dsn = 'mysql:dbname=error_memo;host=localhost;charset=utf8';
