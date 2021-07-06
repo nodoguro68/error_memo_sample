@@ -1,6 +1,9 @@
 <?php 
 
 require_once 'database.php';
+require_once 'validation.php';
+
+$err_msg = array();
 
 /**
  * プリペアードステートメント
@@ -54,4 +57,17 @@ session_regenerate_id();
  */
 function escape($str) {
     return htmlspecialchars($str,ENT_QUOTES);
+}
+
+/**
+ * エラーメッセージ表示
+ * 
+ * @param string $err_msg
+ * @param string $key
+ * @return array
+ */
+function getErrMsg(string $err_msg, string $key) {
+    if(!empty($err_msg[$key])) {
+        return $err_msg[$key];
+    }
 }
