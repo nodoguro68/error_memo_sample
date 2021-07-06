@@ -14,6 +14,13 @@ function dbConnect()
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true,
     );
-    $dbh = new PDO($dsn, $user, $password, $options);
-    return $dbh;
+
+    try {
+        $dbh = new PDO($dsn, $user, $password, $options);
+        return $dbh;
+
+    } catch(Exception $e) {
+        error_log('エラー発生:' . $e->getMessage());
+        $err_msg['common'] = ERR_MSG_DB_CONNECT;
+    }
 }
