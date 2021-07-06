@@ -9,18 +9,18 @@ require_once 'template/header.php';
         <form method="post" action="" class="form">
             <div class="form__header">
                 <h2 class="form__title">ログイン</h2>
-                <div class="err-msg__area"></div>
+                <div class="err-msg__area"><?= getErrMsg($err_msg, 'common'); ?></div>
             </div>
             <div class="form__body">
                 <div class="form__item">
                     <label for="mail_address" class="form__label">メールアドレス</label>
-                    <input type="text" name="mail_address" class="form__input" id="mail_address">
-                    <span class="err-msg"></span>
+                    <input type="text" name="mail_address" class="form__input" id="mail_address" value="<?= getFormData('mail_address'); ?>">
+                    <span class="err-msg"><?= getErrMsg($err_msg, 'mail_address'); ?></span>
                 </div>
                 <div class="form__item">
                     <label for="password" class="form__label">パスワード</label>
-                    <input type="password" name="password" class="form__input" id="password">
-                    <span class="err-msg"></span>
+                    <input type="password" name="password" class="form__input" id="password" value="<?= getFormData('password'); ?>">
+                    <span class="err-msg"><?= getErrMsg($err_msg, 'password'); ?></span>
                 </div>
             </div>
             <div class="form__footer">
