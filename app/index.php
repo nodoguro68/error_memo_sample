@@ -58,7 +58,7 @@ require_once 'template/header.php';
                     <?php if (!empty($categories)) : ?>
                         <?php foreach ($categories as $category) : ?>
                             <li class="category-list__item">
-                                <a href="index.php?=<?= escape($category['category_id']); ?>" class="category-list__link"><?= escape($category['title']); ?></a>
+                                <a href="index.php?category_id=<?= escape($category['category_id']); ?>" class="category-list__link"><?= escape($category['title']); ?></a>
                                 <form method="post" action="" name="delete_category">
                                     <button type="submit" name="category_id" value="<?= escape($category['category_id']); ?>" class="btn-delete"><i class="far fa-trash-alt "></i></button>
                                 </form>
