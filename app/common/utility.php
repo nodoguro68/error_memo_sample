@@ -27,7 +27,7 @@ function execute(object $dbh, string $sql,array $params) {
  * @return mixed
  */
 function fetch(object $dbh, string $sql, array $params) {
-    return $result = execute($dbh, $sql, $params)->fetch(PDO::FETCH_ASSOC);
+    return execute($dbh, $sql, $params)->fetch(PDO::FETCH_ASSOC);
 }
 /**
  * 全レコードを取得
