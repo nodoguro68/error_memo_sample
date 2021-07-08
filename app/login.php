@@ -1,4 +1,42 @@
 <?php
+
+require_once 'common/utility.php';
+require_once 'common/validation.php';
+require_once 'action/user.php';
+
+
+if (!empty($_POST)) {
+
+    $mail_address = filter_input(INPUT_POST, 'mail_address');
+    $password = filter_input(INPUT_POST, 'password');
+    $pass_save = (!empty($_POST['pass_save'])) ? true : false;
+
+    $err_msg = array();
+
+    validRequired($err_msg, $mail_address, 'mail_address');
+    validRequired($err_msg, $password, 'password');
+
+
+    if (empty($err_msg)) {
+        validMaxLen($err_msg, $mail_address, 'mail_address');
+        validMaxLen($err_msg, $password, 'password');
+        validMinLen($err_msg, $password, 'password');
+
+        validMail($err_msg, $mail_address);
+        validHalf($err_msg, $password, 'password');
+
+        if (empty($err_msg)) {
+
+            login($err_msg, $mail_address, $password, $pass_save);
+
+            header('Location: mypage.php');
+        }
+    }
+}
+
+?>
+
+<?php
 require_once 'template/head.php';
 require_once 'template/header.php';
 ?>
@@ -25,7 +63,7 @@ require_once 'template/header.php';
             </div>
             <div class="form__footer">
                 <label>
-                    <input type="checkbox" name="" id="">自動でログイン
+                    <input type="checkbox" name="pass_save">自動でログイン
                 </label>
                 <div class="btn-container">
                     <input type="submit" value="ログイン" class="btn btn--form">
