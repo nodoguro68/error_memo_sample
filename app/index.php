@@ -1,4 +1,31 @@
 <?php
+
+require_once 'common/utility.php';
+require_once 'common/validation.php';
+require_once 'action/category.php';
+
+if(isset($_POST['register_category'])) {
+
+    if(!empty($_SESSION['user_id'])) {
+
+        $category = filter_input(INPUT_POST, 'category');
+        $err_msg = array();
+    
+        // validMaxLen($err_msg, $category, 'category');
+    
+        if(empty($err_msg)) {
+    
+            registerCategory($err_msg, $_SESSION['user_id'], $category);
+    
+        }
+    } else {
+        header('Location: login.php');
+    }
+}
+
+?>
+
+<?php
 require_once 'template/head.php';
 require_once 'template/header.php';
 ?>
@@ -14,14 +41,11 @@ require_once 'template/header.php';
                         <a href="" class="category-list__link">ダミー</a>
                         <button class="btn-delete"><i class="far fa-trash-alt "></i></button>
                     </li>
-                    <li class="category-list__item"><a href="" class="category-list__link">ダミー</a></li>
-                    <li class="category-list__item"><a href="" class="category-list__link">ダミー</a></li>
-                    <li class="category-list__item"><a href="" class="category-list__link">ダミー</a></li>
                 </ul>
 
                 <form method="post" action="" class="form-category">
                     <input type="text" name="category" class="form__input" placeholder="カテゴリーを追加">
-                    <input type="submit" value="＋" class="btn-add-category">
+                    <input type="submit" name="register_category" value="＋" class="btn-add-category">
                 </form>
 
             </aside>
