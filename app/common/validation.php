@@ -72,12 +72,10 @@ function validMail(&$err_msg, string $mail) {
 function validMailDup(&$err_msg, string $mail_address) {
 
     $dbh = dbConnect();
+    $sql = 'SELECT count(*) FROM users WHERE mail_address = :mail_address AND delete_flg = 0';
+    $data = array(':mail_address' => $mail_address);
 
-    $result = fetch(
-        $dbh,
-        'SELECT count(*) FROM users WHERE mail_address = :mail_address AND delete_flg = 0',
-        array(':mail_address' => $mail_address)
-    );
+    $result = fetch($dbh, $sql, $data);
     
     if(!empty(array_shift($result))) {
         $err_msg['mail_address'] = ERR_MSG_MAIL_DUP;
