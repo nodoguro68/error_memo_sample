@@ -4,9 +4,13 @@
         <nav class="nav header__nav">
             <ul class="nav__menu">
                 <li class="nav__item"><a href="index.php" class="nav__link">トップページ</a></li>
-                <li class="nav__item"><a href="login.php" class="nav__link">ログイン</a></li>
-                <li class="nav__item"><a href="logout.php" class="nav__link">ログアウト</a></li>
-                <li class="nav__item"><a href="mypage.php" class="nav__link">マイページ</a></li>
+                <?php if(!empty($_SESSION['user_id'])): ?>
+                    <li class="nav__item"><a href="mypage.php" class="nav__link">マイページ</a></li>
+                    <li class="nav__item"><a href="logout.php" class="nav__link">ログアウト</a></li>
+                <?php else: ?>
+                    <li class="nav__item"><a href="signup.php" class="nav__link">ユーザー登録</a></li>
+                    <li class="nav__item"><a href="login.php" class="nav__link">ログイン</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </div>
