@@ -25,6 +25,22 @@ if (isset($_POST['register_category'])) {
     }
 }
 
+if (isset($_POST['category_id'])) {
+
+    if (!empty($user_id)) {
+
+        $category_id = filter_input(INPUT_POST, 'category_id');
+        $err_msg = array();
+
+        if (empty($err_msg)) {
+
+            deleteCategory($err_msg, (int)$category_id, $user_id);
+        }
+    } else {
+        header('Location: login.php');
+    }
+}
+
 ?>
 
 <?php
@@ -43,7 +59,9 @@ require_once 'template/header.php';
                         <?php foreach ($categories as $category) : ?>
                             <li class="category-list__item">
                                 <a href="index.php?=<?= escape($category['category_id']); ?>" class="category-list__link"><?= escape($category['title']); ?></a>
-                                <button class="btn-delete"><i class="far fa-trash-alt "></i></button>
+                                <form method="post" action="" name="delete_category">
+                                    <button type="submit" name="category_id" value="<?= escape($category['category_id']); ?>" class="btn-delete"><i class="far fa-trash-alt "></i></button>
+                                </form>
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
