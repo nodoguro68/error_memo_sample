@@ -29,3 +29,31 @@ function registerCategory(&$err_msg, int $user_id, string $category) {
         $err_msg['common'] = ERR_MSG;
     }
 }
+
+/**
+ * カテゴリー一覧表示
+ * 
+ * @param array $err_msg
+ * @param int $user_id
+ */
+function getCategories(&$err_msg, int $user_id) {
+
+    try{
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT category_id, title FROM categories WHERE user_id = :user_id';
+        $data = array(
+            ':user_id' => $user_id,
+        );
+
+        $categories = fetchAll($dbh, $sql, $data);
+        return $categories;
+        header('Location: index.php');
+
+    } catch(Exception $e) {
+        error_log('エラー発生:' . $e->getMessage());
+        $err_msg['common'] = ERR_MSG;
+    }
+}
+
