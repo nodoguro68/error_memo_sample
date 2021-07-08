@@ -4,19 +4,21 @@ require_once 'common/utility.php';
 require_once 'common/validation.php';
 require_once 'action/category.php';
 
-if(isset($_POST['register_category'])) {
+$user_id = $_SESSION['user_id'];
+$categories = getCategories($err_msg, $user_id);
 
-    if(!empty($_SESSION['user_id'])) {
+if (isset($_POST['register_category'])) {
+
+    if (!empty($user_id)) {
 
         $category = filter_input(INPUT_POST, 'category');
         $err_msg = array();
-    
-        // validMaxLen($err_msg, $category, 'category');
-    
-        if(empty($err_msg)) {
-    
-            registerCategory($err_msg, $_SESSION['user_id'], $category);
-    
+
+        validMaxLen($err_msg, $category, 'category');
+
+        if (empty($err_msg)) {
+
+            registerCategory($err_msg, $user_id, $category);
         }
     } else {
         header('Location: login.php');
@@ -37,10 +39,14 @@ require_once 'template/header.php';
             <aside class="sidebar__area">
 
                 <ul class="category-list">
-                    <li class="category-list__item">
-                        <a href="" class="category-list__link">ダミー</a>
-                        <button class="btn-delete"><i class="far fa-trash-alt "></i></button>
-                    </li>
+                    <?php if (!empty($categories)) : ?>
+                        <?php foreach ($categories as $category) : ?>
+                            <li class="category-list__item">
+                                <a href="index.php?=<?= escape($category['category_id']); ?>" class="category-list__link"><?= escape($category['title']); ?></a>
+                                <button class="btn-delete"><i class="far fa-trash-alt "></i></button>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </ul>
 
                 <form method="post" action="" class="form-category">
