@@ -109,6 +109,21 @@ require_once 'template/header.php';
         </div>
     </div>
 
+    <div class="modal">
+        <div class="modal__inner">
+            <div class="modal__description">
+                <span class="modal__category">カテゴリー</span>を削除してもよろしいですか？
+                <p class="modal__note">※カテゴリー内のメモも一緒に削除されます</p>
+            </div>
+            <form method="post" class="btn-container">
+                <button class="btn-modal btn-modal--cancel">キャンセル</button>
+                <button type="submit" name="category_id" value="<?= escape($category_id); ?>" class="btn-modal btn-modal--delete">削除</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal__bg"></div>
+
 </main>
 
 <script src="../public/js/app.js"></script>
