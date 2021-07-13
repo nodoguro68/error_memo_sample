@@ -96,3 +96,77 @@ function login(&$err_msg, string $mail_address, string $password, bool $pass_sav
         $err_msg['common'] = ERR_MSG_LOGIN;
     }
 }
+
+/**
+ * ユーザー情報取得
+ * 
+ * @param array $err_msg
+ * @param int $user_id
+ * @return mixed
+ */
+function getUser(&$err_msg,int $user_id) {
+    try {
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT user_id,name,mail_address,created_at FROM users WHERE user_id = :user_id';
+        $data = array(':user_id' => $user_id);
+
+        $user_data = fetch($dbh, $sql, $data);
+        return $user_data;
+
+    } catch (Exception $e) {
+        error_log('エラー発生:' . $e->getMessage());
+        $err_msg['common'] = ERR_MSG;
+    }
+}
+/**
+ * パスワード取得
+ * 
+ * @param array $err_msg
+ * @param int $user_id
+ * @return mixed
+ */
+function getPassword(&$err_msg,int $user_id) {
+    try {
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT password FROM users WHERE user_id = :user_id';
+        $data = array(':user_id' => $user_id);
+
+        $user_data = fetch($dbh, $sql, $data);
+        return $user_data;
+
+    } catch (Exception $e) {
+        error_log('エラー発生:' . $e->getMessage());
+        $err_msg['common'] = ERR_MSG;
+    }
+}
+
+/**
+ * パスワード変更
+ * 
+ * @param array $err_msg
+ * @param int $user_id
+ * @param string $password_new
+ * @return bool
+ */
+function updatePass(&$err_msg, int $user_id, string $password_new) {
+    try {
+
+        $dbh = dbConnect();
+
+        $sql = 'UPDATE users SET password = :password WHERE user_id = :user_id';
+        $data = array(
+            ':user_id' => $user_id,
+            ':password' => password_hash($password_new, PASSWORD_DEFAULT),
+        );
+
+        return execute($dbh, $sql, $data);
+
+    } catch (Exception $e) {
+        error_log('エラー発生:' . $e->getMessage());
+        $err_msg['common'] = ERR_MSG;
+    }
+}
