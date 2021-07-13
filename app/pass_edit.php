@@ -1,4 +1,11 @@
 <?php
+
+require_once 'common/utility.php';
+require_once 'common/auth.php';
+
+?>
+
+<?php
 require_once 'template/head.php';
 require_once 'template/header.php';
 ?>
