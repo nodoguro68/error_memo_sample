@@ -4,8 +4,10 @@ require_once 'common/utility.php';
 require_once 'common/validation.php';
 require_once 'action/category.php';
 
-$user_id = $_SESSION['user_id'];
-$categories = getCategories($err_msg, $user_id);
+$user_id = (!empty($_SESSION['user_id'])) ? $_SESSION['user_id']: null;
+$categories = (!empty($_SESSION['user_id'])) ? getCategories($err_msg, $user_id): null;
+
+
 
 if (isset($_POST['register_category'])) {
 
@@ -101,7 +103,7 @@ require_once 'template/header.php';
                 </ul>
 
                 <div class="link__container">
-                    <a href="register_error-memo.php" class="link-register">＋</a>
+                    <a href="memo_detail.php" class="link-register">＋</a>
                 </div>
 
             </div>

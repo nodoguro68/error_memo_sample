@@ -65,7 +65,7 @@ require_once 'template/header.php';
             </div>
 
             <div class="link__container">
-                <a href="register_error-memo.php" class="link-register">＋</a>
+                <a href="memo_detail.php" class="link-register">＋</a>
             </div>
 
         </div>
