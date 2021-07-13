@@ -13,6 +13,7 @@ const ERR_MSG_PASS_OLD = '古いパスワードが違います';
 const ERR_MSG_PASS_OLD_DUP = '古いパスワードと同じです';
 const ERR_MSG_HALF = '半角英数字のみご利用いただけます';
 const ERR_MSG_EXPIRE = '有効期限が切れています';
+const ERR_MSG_SEND_MAIL = 'メールの送信に失敗しました';
 const SUC_MSG_REGISTER_USER = 'ユーザー登録が完了しました';
 const SUC_MSG_LOGIN = 'ログインしました';
 const SUC_MSG_LOGOUT = 'ログアウトされました';
