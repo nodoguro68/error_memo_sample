@@ -107,3 +107,29 @@ function validPass(&$err_msg, string $pass, string $key) {
     validMinLen($err_msg, $pass, $key);
     validMaxLen($err_msg, $pass, $key);
 }
+
+/**
+ * 古いパスワードとデータベースに登録されているパスワードが同じかチェック
+ * 
+ * @param array $err_msg
+ * @param string $pass_old
+ * @param string $pass_db
+ */
+function validOldPass(&$err_msg, string $pass_old, string $pass_db) {
+    if (!password_verify($pass_old, $pass_db)) {
+        $err_msg['password_old'] = ERR_MSG_PASS_OLD;
+    }
+}
+
+/**
+ * 古いパスワードと新しいパスワードが違うものかチェック
+ * 
+ * @param array $err_msg
+ * @param string $pass_old
+ * @param string $pass_new
+ */
+function validNewPass(&$err_msg, string $pass_old, string $pass_new) {
+    if ($pass_old === $pass_new) {
+        $err_msg['password_new'] = ERR_MSG_PASS_OLD_DUP;
+    }
+}
