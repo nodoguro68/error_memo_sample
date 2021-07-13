@@ -29,12 +29,12 @@ if(!empty($_POST)) {
         validMail($err_msg, $mail_address);
         validMailDup($err_msg, $mail_address);
         
-        validPassRe($err_msg,$password,$password_re);
+        validPassRe($err_msg,$password,$password_re,'password');
         validHalf($err_msg, $password, 'password');
 
         if(empty($err_msg)) {
 
-            registerUser($user_name, $mail_address, $password);
+            registerUser($err_msg,$user_name, $mail_address, $password);
 
             // リダイレクト マイページ
             header('Location: mypage.php');
