@@ -87,10 +87,23 @@ function validMailDup(&$err_msg, string $mail_address) {
  * @param array $err_msg
  * @param string $pass
  * @param string $pass_re
+ * @param string $key
  */
-function validPassRe(&$err_msg, string $pass, string $pass_re) {
+function validPassRe(&$err_msg, string $pass, string $pass_re, $key) {
     if($pass !== $pass_re) {
-        $err_msg['password'] = ERR_MSG_PASS_RE;
+        $err_msg[$key] = ERR_MSG_PASS_RE;
     }
 }
 
+/**
+ * パスワードチェック
+ * 
+ * @param array $err_msg
+ * @param string $pass
+ * @param string $key
+ */
+function validPass(&$err_msg, string $pass, string $key) {
+    validHalf($err_msg, $pass, $key);
+    validMinLen($err_msg, $pass, $key);
+    validMaxLen($err_msg, $pass, $key);
+}
