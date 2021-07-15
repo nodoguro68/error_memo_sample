@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once 'message.php';
 
@@ -9,8 +9,9 @@ require_once 'message.php';
  * @param string $str
  * @param string $key
  */
-function validRequired(&$err_msg, string $str, string $key) {
-    if(empty(trim($str))) {
+function validRequired(&$err_msg, string $str, string $key)
+{
+    if (empty(trim($str))) {
         $err_msg[$key] = ERR_MSG_REQUIER;
     }
 }
@@ -22,9 +23,10 @@ function validRequired(&$err_msg, string $str, string $key) {
  * @param string $key
  * @param int $max
  */
-function validMaxLen(&$err_msg, string $str, string $key, int $max = 256) {
-    if(mb_strlen($str) > $max) {
-        $err_msg[$key] = $max.ERR_MSG_MAX_LEN;
+function validMaxLen(&$err_msg, string $str, string $key, int $max = 256)
+{
+    if (mb_strlen($str) > $max) {
+        $err_msg[$key] = $max . ERR_MSG_MAX_LEN;
     }
 }
 /**
@@ -35,9 +37,10 @@ function validMaxLen(&$err_msg, string $str, string $key, int $max = 256) {
  * @param string $key
  * @param int $min
  */
-function validMinLen(&$err_msg, string $str, string $key, int $min = 8) {
-    if(mb_strlen($str) < $min) {
-        $err_msg[$key] = $min.ERR_MSG_MIN_LEN;
+function validMinLen(&$err_msg, string $str, string $key, int $min = 8)
+{
+    if (mb_strlen($str) < $min) {
+        $err_msg[$key] = $min . ERR_MSG_MIN_LEN;
     }
 }
 /**
@@ -47,8 +50,9 @@ function validMinLen(&$err_msg, string $str, string $key, int $min = 8) {
  * @param string $str
  * @param string $key
  */
-function validHalf(&$err_msg, string $str, string $key) {
-    if(!preg_match("/^[a-zA-Z0-9]+$/", $str)) {
+function validHalf(&$err_msg, string $str, string $key)
+{
+    if (!preg_match("/^[a-zA-Z0-9]+$/", $str)) {
         $err_msg[$key] = ERR_MSG_HALF;
     }
 }
@@ -58,8 +62,9 @@ function validHalf(&$err_msg, string $str, string $key) {
  * @param array $err_msg
  * @param string $mail
  */
-function validMail(&$err_msg, string $mail) {
-    if(!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
+function validMail(&$err_msg, string $mail)
+{
+    if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
         $err_msg['mail_address'] = ERR_MSG_MAIL;
     }
 }
@@ -69,15 +74,16 @@ function validMail(&$err_msg, string $mail) {
  * @param array $err_msg
  * @param string $mail
  */
-function validMailDup(&$err_msg, string $mail_address) {
+function validMailDup(&$err_msg, string $mail_address)
+{
 
     $dbh = dbConnect();
     $sql = 'SELECT count(*) FROM users WHERE mail_address = :mail_address AND delete_flg = 0';
     $data = array(':mail_address' => $mail_address);
 
     $result = fetch($dbh, $sql, $data);
-    
-    if(!empty(array_shift($result))) {
+
+    if (!empty(array_shift($result))) {
         $err_msg['mail_address'] = ERR_MSG_MAIL_DUP;
     }
 }
@@ -89,8 +95,9 @@ function validMailDup(&$err_msg, string $mail_address) {
  * @param string $pass_re
  * @param string $key
  */
-function validPassRe(&$err_msg, string $pass, string $pass_re, $key) {
-    if($pass !== $pass_re) {
+function validPassRe(&$err_msg, string $pass, string $pass_re, $key)
+{
+    if ($pass !== $pass_re) {
         $err_msg[$key] = ERR_MSG_PASS_RE;
     }
 }
@@ -102,7 +109,8 @@ function validPassRe(&$err_msg, string $pass, string $pass_re, $key) {
  * @param string $pass
  * @param string $key
  */
-function validPass(&$err_msg, string $pass, string $key) {
+function validPass(&$err_msg, string $pass, string $key)
+{
     validHalf($err_msg, $pass, $key);
     validMinLen($err_msg, $pass, $key);
     validMaxLen($err_msg, $pass, $key);
@@ -115,7 +123,8 @@ function validPass(&$err_msg, string $pass, string $key) {
  * @param string $pass_old
  * @param string $pass_db
  */
-function validOldPass(&$err_msg, string $pass_old, string $pass_db) {
+function validOldPass(&$err_msg, string $pass_old, string $pass_db)
+{
     if (!password_verify($pass_old, $pass_db)) {
         $err_msg['password_old'] = ERR_MSG_PASS_OLD;
     }
@@ -128,8 +137,35 @@ function validOldPass(&$err_msg, string $pass_old, string $pass_db) {
  * @param string $pass_old
  * @param string $pass_new
  */
-function validNewPass(&$err_msg, string $pass_old, string $pass_new) {
+function validNewPass(&$err_msg, string $pass_old, string $pass_new)
+{
     if ($pass_old === $pass_new) {
         $err_msg['password_new'] = ERR_MSG_PASS_OLD_DUP;
+    }
+}
+
+/**
+ * 認証キーの制限チェック
+ * 
+ * @param array $err_msg
+ * @param $auth_key_limit
+ */
+function validAuthKeyLimit(&$err_msg, $auth_key_limit)
+{
+    if (time() > $auth_key_limit) {
+        $err_msg['common'] = ERR_MSG_EXPIRE;
+    }
+}
+/**
+ * 文字列があっているかどうか
+ * 
+ * @param array $err_msg
+ * @param string $str1
+ * @param string $str2
+ */
+function validMatch(&$err_msg, string $str1, string $str2)
+{
+    if ($str1 !== $str2) {
+        $err_msg['common'] = ERR_MSG_MATCH;
     }
 }
