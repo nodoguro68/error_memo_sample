@@ -90,3 +90,18 @@ function getFormData(string $key, $flg = false) {
         return escape($method[$key]);
     }
 }
+
+/**
+ * ランダムキー生成
+ * 
+ * @param int $length
+ * @return string 
+ */
+function createRandomKey(int $length = 8) {
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ0123456789';
+    $str = '';
+    for ($i = 0; $i < $length; ++$i) {
+        $str .= $chars[mt_rand(0, 61)];
+    }
+    return $str;
+}
