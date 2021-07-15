@@ -46,16 +46,17 @@ function registerUser(&$err_msg, string $user_name, string $mail_address, string
  * メールアドレスを使ってユーザーのデータを取得
  * 
  * @param array $err_msg
+ * @param string $column
  * @param string $mail_address
  * @return mixed
  */
-function getUserByMailAddress(&$err_msg ,string $mail_address) {
+function getUserByMailAddress(&$err_msg, string $column ,string $mail_address) {
 
     try {
 
         $dbh = dbConnect();
 
-        $sql = 'SELECT user_id,password FROM users WHERE mail_address = :mail_address';
+        $sql = 'SELECT '. $column .' FROM users WHERE mail_address = :mail_address';
         $data = array(':mail_address' => $mail_address);
 
         $user_data = fetch($dbh, $sql, $data);
@@ -78,7 +79,7 @@ function getUserByMailAddress(&$err_msg ,string $mail_address) {
 
 function login(&$err_msg, string $mail_address, string $password, bool $pass_save) {
 
-    $user_data = getUserByMailAddress($err_msg ,$mail_address);
+    $user_data = getUserByMailAddress($err_msg, 'user_id,password' ,$mail_address);
 
     if (!empty($user_data) && password_verify($password, $user_data['password'])) {
 
@@ -161,6 +162,34 @@ function updatePass(&$err_msg, int $user_id, string $password_new) {
         $data = array(
             ':user_id' => $user_id,
             ':password' => password_hash($password_new, PASSWORD_DEFAULT),
+        );
+
+        return execute($dbh, $sql, $data);
+
+    } catch (Exception $e) {
+        error_log('エラー発生:' . $e->getMessage());
+        $err_msg['common'] = ERR_MSG;
+    }
+}
+
+/**
+ * パスワード再発行
+ * 
+ * @param array $err_msg
+ * @param string $mail_address
+ * @param string $password
+ * @return bool
+ */
+function reissuePass(&$err_msg, string $mail_address, string $password)
+{
+    try {
+
+        $dbh = dbConnect();
+
+        $sql = 'UPDATE users SET password = :password WHERE mail_address = :mail_address';
+        $data = array(
+            ':mail_address' => $mail_address,
+            ':password' => password_hash($password, PASSWORD_DEFAULT),
         );
 
         return execute($dbh, $sql, $data);
