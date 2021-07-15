@@ -15,6 +15,7 @@ const ERR_MSG_HALF = '半角英数字のみご利用いただけます';
 const ERR_MSG_EXPIRE = '有効期限が切れています';
 const ERR_MSG_SEND_MAIL = 'メールの送信に失敗しました';
 const ERR_MSG_MATCH = '正しくありません';
+const ERR_MSG_LENGTH = '文字で入力してください';
 const SUC_MSG_REGISTER_USER = 'ユーザー登録が完了しました';
 const SUC_MSG_LOGIN = 'ログインしました';
 const SUC_MSG_LOGOUT = 'ログアウトされました';
