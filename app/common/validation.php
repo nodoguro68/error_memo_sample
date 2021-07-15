@@ -169,3 +169,18 @@ function validMatch(&$err_msg, string $str1, string $str2)
         $err_msg['common'] = ERR_MSG_MATCH;
     }
 }
+
+/**
+ * 固定長チェック
+ * 
+ * @param array $err_msg
+ * @param string $str
+ * @param string $key
+ * @param int $len
+ */
+function validLength(&$err_msg, string $str, string $key, int $len = 8)
+{
+    if (mb_strlen($str) !== $len) {
+        $err_msg[$key] = $len . ERR_MSG_LENGTH;
+    }
+}
