@@ -7,15 +7,15 @@
  * @param string $from
  * @param string $to
  * @param string $subject
- * @param string $comment
+ * @param string $contents
  */
-function sendMail(&$err_msg,$from, $to, $subject, $comment) {
-    if (!empty($to) && !empty($subject) && !empty($comment)) {
+function sendMail(&$err_msg,$from, $to, $subject, $contents) {
+    if (!empty($to) && !empty($subject) && !empty($contents)) {
         
         mb_language("Japanese");
         mb_internal_encoding("UTF-8");
 
-        $result = mb_send_mail($to, $subject, $comment, "From: " . $from);
+        $result = mb_send_mail($to, $subject, $contents, "From: " . $from);
 
         if ($result) {
             $_SESSION['alert_msg'] = SUC_MSG_MAIL;
