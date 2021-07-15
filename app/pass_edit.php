@@ -3,6 +3,7 @@
 require_once 'common/utility.php';
 require_once 'common/auth.php';
 require_once 'common/validation.php';
+require_once 'common/mail.php';
 require_once 'action/user.php';
 
 $user_id = $_SESSION['user_id'];
