@@ -74,7 +74,6 @@ function getUserByMailAddress(&$err_msg, string $column ,string $mail_address) {
  * @param string $mail_address
  * @param string $password
  * @param bool $pass_save
- * @return 
  */
 
 function login(&$err_msg, string $mail_address, string $password, bool $pass_save) {
@@ -151,7 +150,7 @@ function getPassword(&$err_msg,int $user_id) {
  * @param array $err_msg
  * @param int $user_id
  * @param string $password_new
- * @return bool
+ * @return object
  */
 function updatePass(&$err_msg, int $user_id, string $password_new) {
     try {
@@ -178,7 +177,7 @@ function updatePass(&$err_msg, int $user_id, string $password_new) {
  * @param array $err_msg
  * @param string $mail_address
  * @param string $password
- * @return bool
+ * @return object 
  */
 function reissuePass(&$err_msg, string $mail_address, string $password)
 {
