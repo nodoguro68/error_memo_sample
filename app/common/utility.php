@@ -14,9 +14,13 @@ $err_msg = array();
 function execute(object $dbh, string $sql,array $params) {
 
     $stmt = $dbh->prepare($sql);
-    $stmt->execute($params);
 
-    return $stmt;
+    if($stmt->execute($params)) {
+        return $stmt;
+    } else {
+        return false;
+    }
+
 }
 
 /**
